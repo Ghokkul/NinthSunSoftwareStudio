@@ -185,6 +185,11 @@ nav{
   border:1px solid var(--gold);color:var(--gold);
   padding:4px 10px;border-radius:999px;
 }
+.pro-pill{
+  font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  border:1px solid var(--cream);color:var(--cream);
+  padding:4px 10px;border-radius:999px;
+}
 .v-desc{color:var(--dust);font-size:15px}
 .tags{display:flex;gap:8px;flex-wrap:wrap}
 .tag{
@@ -200,6 +205,28 @@ nav{
 }
 .v-visit:hover{background:var(--panel);border-color:var(--dust)}
 @media(max-width:760px){.ventures{grid-template-columns:1fr}}
+
+/* ---------- services ---------- */
+.svc-head{text-align:center;margin-bottom:26px}
+.svc-head .eyebrow{justify-content:center}
+.svc-head h2{font-size:clamp(30px,4vw,46px);margin:20px 0 10px}
+.svc-head .sub{margin:0 auto;font-style:italic;font-family:var(--display);font-size:16px}
+.svc-list{max-width:820px;margin:40px auto 0;border-top:1px solid var(--line)}
+.svc-row{
+  display:flex;align-items:center;gap:28px;
+  padding:30px 8px;border-bottom:1px solid var(--line);
+  transition:background .25s ease, padding-left .25s ease;
+}
+.svc-row:hover{background:rgba(232,132,46,.04);padding-left:18px}
+.svc-icon{
+  flex:none;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--amber);
+}
+.svc-icon svg{width:20px;height:20px}
+.svc-row h3{font-size:19px;font-family:var(--body);font-weight:600;letter-spacing:0;margin-bottom:3px}
+.svc-row p{color:var(--dust);font-size:14.5px;margin:0}
 
 /* ---------- models ---------- */
 #models{background:var(--char);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -314,7 +341,7 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <a class="btn btn-ghost" href="#models">Meet the models</a>
       </div>
       <div class="hero-foot">
-        <div><b>4</b> ventures in orbit</div>
+        <div><b>5</b> ventures in orbit</div>
         <div><b>6</b> models in the engine</div>
         <div><b>1</b> flagship, built to last</div>
       </div>
@@ -396,6 +423,86 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <div class="tags"><span class="tag">Dev Tools</span><span class="tag">SaaS</span></div>
         <a class="v-visit" href="https://ghokkul.github.io/Axiom-AI-Article-Generator/" target="_blank" rel="noopener">Visit &rarr;</a>
       </article>
+
+      <article class="v-card reveal">
+        <div class="v-title">Brain Dump <span class="pro-pill">Pro</span></div>
+        <p class="v-desc">Capture everything, organize nothing. Pour your thoughts out in one messy stream — AI sorts them into tasks, notes, and ideas before you've finished typing.</p>
+        <div class="tags"><span class="tag">Productivity</span><span class="tag">AI Capture</span></div>
+        <a class="v-visit" href="https://ghokkul.github.io/BrainDump/" target="_blank" rel="noopener">Visit &rarr;</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <p class="eyebrow">What we build</p>
+      <h2>End-to-end product development</h2>
+      <p class="sub">Build from scratch or replicate existing products with your unique twist</p>
+    </div>
+
+    <div class="svc-list">
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <h3>Web Applications</h3>
+          <p>SaaS platforms, marketplaces, dashboards</p>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg>
+        </div>
+        <div>
+          <h3>Mobile Apps</h3>
+          <p>iOS, Android, React Native</p>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+        </div>
+        <div>
+          <h3>AI Integration</h3>
+          <p>GPT, Claude, custom models</p>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 5.6L3 17.6V21h3.4l5.7-5.7a4.5 4.5 0 0 0 5.6-6l-3 3-2.8-.7-.7-2.8 3.5-2.5z"/></svg>
+        </div>
+        <div>
+          <h3>Internal Tools</h3>
+          <p>Admin panels, automation, workflows</p>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h5"/></svg>
+        </div>
+        <div>
+          <h3>Browser Extensions</h3>
+          <p>Chrome, Firefox, Safari</p>
+        </div>
+      </div>
+
+      <div class="svc-row reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5l1.2 2.7 2.9-.6 1 2.8 2.9.9-.7 2.9 2 2.2-2 2.2.7 2.9-2.9.9-1 2.8-2.9-.6L12 21.5l-1.2-2.7-2.9.6-1-2.8-2.9-.9.7-2.9-2-2.2 2-2.2-.7-2.9 2.9-.9 1-2.8 2.9.6z"/></svg>
+        </div>
+        <div>
+          <h3>Maintenance</h3>
+          <p>Updates, optimization, scaling</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
