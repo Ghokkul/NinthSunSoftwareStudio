@@ -206,6 +206,33 @@ nav{
 .v-visit:hover{background:var(--panel);border-color:var(--dust)}
 @media(max-width:760px){.ventures{grid-template-columns:1fr}}
 
+/* ---------- announcement ---------- */
+.announce{
+  margin-top:20px;
+  position:relative;
+  border:1px solid rgba(232,132,46,.55);
+  border-radius:18px;
+  padding:44px 40px;
+  background:
+    radial-gradient(ellipse 70% 120% at 85% 0%, rgba(232,132,46,.14), transparent 60%),
+    linear-gradient(160deg,#1F1206,var(--char) 55%);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:36px;flex-wrap:wrap;
+  overflow:hidden;
+}
+.announce::before{
+  content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;
+  border-radius:50%;background:radial-gradient(circle, rgba(240,180,92,.18), transparent 70%);
+  pointer-events:none;
+}
+.announce .eyebrow{margin-bottom:16px}
+.announce h3{font-family:var(--display);font-size:clamp(26px,3.4vw,36px);font-weight:500;margin-bottom:10px}
+.announce h3 .domain{color:var(--gold);font-style:italic}
+.announce p{color:var(--dust);font-size:15.5px;max-width:52ch;margin-bottom:18px}
+.announce .tags{margin-bottom:0}
+.announce-cta{flex:none}
+@media(max-width:760px){.announce{padding:34px 26px}}
+
 /* ---------- services ---------- */
 .svc-head{text-align:center;margin-bottom:26px}
 .svc-head .eyebrow{justify-content:center}
@@ -431,6 +458,18 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <a class="v-visit" href="https://ghokkul.github.io/BrainDump/" target="_blank" rel="noopener">Visit &rarr;</a>
       </article>
     </div>
+
+    <aside class="announce reveal" aria-label="Announcing Project Tracelight">
+      <div>
+        <p class="eyebrow">Announcing &mdash; Project Tracelight</p>
+        <h3>tracelight<span class="domain">.ai</span></h3>
+        <p>Our AI cybersecurity studio. Tracelight puts an AI analyst inside your logs — hunting anomalies, tracing intrusions, and explaining every alert in plain language before it becomes a breach.</p>
+        <div class="tags"><span class="tag">AI Cybersecurity</span><span class="tag">Studio</span><span class="tag">Log Intelligence</span></div>
+      </div>
+      <div class="announce-cta">
+        <a class="btn btn-solar" href="https://ghokkul.github.io/tracelight.ai/#demo" target="_blank" rel="noopener">See the demo &rarr;</a>
+      </div>
+    </aside>
   </div>
 </section>
 
