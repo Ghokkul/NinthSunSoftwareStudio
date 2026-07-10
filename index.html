@@ -342,6 +342,46 @@ nav{
   .founder-card p.f-bio{margin:0 auto}
 }
 
+/* ---------- future projects ---------- */
+#future{background:var(--char);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.future-card{
+  position:relative;
+  border:1.5px dashed rgba(240,180,92,.45);
+  border-radius:20px;
+  padding:48px 44px;
+  background:
+    radial-gradient(ellipse 60% 100% at 10% 0%, rgba(240,180,92,.08), transparent 60%),
+    #12100D;
+  display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center;
+  overflow:hidden;
+}
+.future-card::after{
+  content:"2027";
+  position:absolute;right:-16px;bottom:-42px;
+  font-family:var(--display);font-size:150px;font-weight:600;
+  color:rgba(240,180,92,.06);pointer-events:none;line-height:1;
+}
+.year-pill{
+  font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  border:1px dashed var(--gold);color:var(--gold);
+  padding:4px 10px;border-radius:999px;
+}
+.future-card h3{font-size:clamp(26px,3.4vw,36px);margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.future-card p.f-desc{color:var(--dust);font-size:16px;max-width:58ch;margin-bottom:20px}
+.future-status{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:10px;flex:none;
+}
+.future-status .blink{
+  width:8px;height:8px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 12px var(--gold);
+  animation:blinkdot 2.2s ease-in-out infinite;
+}
+@keyframes blinkdot{0%,100%{opacity:1}50%{opacity:.25}}
+@media(max-width:760px){
+  .future-card{grid-template-columns:1fr;padding:36px 26px}
+}
+
 /* ---------- partner ---------- */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .plan{border:1px solid var(--line);border-radius:18px;padding:40px;background:var(--char)}
@@ -510,18 +550,6 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <a class="v-visit" href="https://ghokkul.github.io/BrainDump/" target="_blank" rel="noopener">Visit &rarr;</a>
       </article>
     </div>
-
-    <aside class="announce reveal" aria-label="Announcing Project Tracelight">
-      <div>
-        <p class="eyebrow">Announcing &mdash; Project Tracelight</p>
-        <h3>tracelight<span class="domain">.ai</span></h3>
-        <p>Our AI cybersecurity studio. Tracelight puts an AI analyst inside your logs — hunting anomalies, tracing intrusions, and explaining every alert in plain language before it becomes a breach.</p>
-        <div class="tags"><span class="tag">AI Cybersecurity</span><span class="tag">Studio</span><span class="tag">Log Intelligence</span></div>
-      </div>
-      <div class="announce-cta">
-        <a class="btn btn-solar" href="https://ghokkul.github.io/tracelight.ai/#demo" target="_blank" rel="noopener">See the demo &rarr;</a>
-      </div>
-    </aside>
   </div>
 </section>
 
@@ -691,6 +719,38 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <h3>Ignition</h3>
         <p>We spin the venture out with its own team, cap table, and roadmap. The studio keeps a stake; the sun keeps burning without us.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUTURE PROJECTS ================= -->
+<section id="future">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Suns not yet risen</p>
+      <h2>Future projects &mdash; 2027 &amp; beyond</h2>
+      <p class="sub">What's on the pad for the studio's next orbit. Early, unannounced, and already in motion.</p>
+    </div>
+
+    <aside class="announce reveal" style="margin:0 0 20px" aria-label="Project Tracelight — upcoming">
+      <div>
+        <p class="eyebrow">Upcoming &mdash; Project Tracelight</p>
+        <h3>tracelight<span class="domain">.ai</span></h3>
+        <p>Our AI cybersecurity studio. Tracelight puts an AI analyst inside your logs — hunting anomalies, tracing intrusions, and explaining every alert in plain language before it becomes a breach.</p>
+        <div class="tags"><span class="tag">AI Cybersecurity</span><span class="tag">Studio</span><span class="tag">Log Intelligence</span></div>
+      </div>
+      <div class="announce-cta">
+        <a class="btn btn-solar" href="https://ghokkul.github.io/tracelight.ai/#demo" target="_blank" rel="noopener">See the demo &rarr;</a>
+      </div>
+    </aside>
+
+    <div class="future-card reveal">
+      <div>
+        <h3>Prompt Immune System <span class="year-pill">2027</span></h3>
+        <p class="f-desc">A future cybersecurity AI agent studio. As AI agents start reading emails, browsing the web, and acting on our behalf, they inherit a new attack surface — injected instructions hiding in ordinary content. The Prompt Immune System gives every agent a biological-grade defense layer: tracing each instruction to its source, quarantining injected commands behind glass before an agent ever acts, and learning from every catch. An immune system for the agent era.</p>
+        <div class="tags"><span class="tag">AI Agent Security</span><span class="tag">Cyber Defense</span><span class="tag">Studio</span></div>
+      </div>
+      <div class="future-status"><span class="blink"></span>In incubation</div>
     </div>
   </div>
 </section>
