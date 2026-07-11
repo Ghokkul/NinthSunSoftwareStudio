@@ -406,6 +406,7 @@ nav{
   font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;
   color:var(--amber);margin-bottom:10px;
 }
+.c-icon{width:44px;height:44px;border-radius:11px;margin-bottom:16px;display:block}
 .c-node h4{font-family:var(--display);font-size:20px;margin-bottom:10px}
 .c-node p:last-child{color:var(--dust);font-size:14.5px;line-height:1.6}
 .c-arrow{
@@ -415,6 +416,32 @@ nav{
   margin-top:26px;text-align:center;
   font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
   color:var(--gold);
+}
+
+/* ---------- loop diagram (plain-language visual of the cycle) ---------- */
+.loop-wrap{
+  margin-top:48px;padding-top:44px;
+  border-top:1px solid var(--line);
+  display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center;
+}
+.loop-copy .eyebrow{margin-bottom:14px}
+.loop-copy h3{font-size:clamp(20px,2.4vw,26px);margin-bottom:14px}
+.loop-copy p{color:var(--dust);font-size:15px;line-height:1.7;margin-bottom:14px}
+.loop-copy p:last-child{margin-bottom:0}
+.loop-copy strong{color:var(--cream);font-weight:600}
+.loop-diagram{position:relative;aspect-ratio:1/1;max-width:420px;margin:0 auto;width:100%}
+.loop-diagram svg{width:100%;height:100%;overflow:visible}
+.loop-ring{animation:loopspin 26s linear infinite;transform-origin:210px 210px}
+.loop-ring2{animation:loopspin 26s linear infinite;transform-origin:210px 210px;animation-delay:-13s}
+@keyframes loopspin{to{transform:rotate(360deg)}}
+.loop-center-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--dust);
+}
+@media(max-width:900px){
+  .loop-wrap{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  .loop-ring,.loop-ring2{animation:none}
 }
 @media(max-width:860px){
   .constellation{padding:34px 24px}
@@ -815,23 +842,153 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
       <div class="constellation-grid">
         <div class="c-node">
           <p class="c-step">01 &mdash; Know</p>
+          <svg class="c-icon" viewBox="0 0 512 512" aria-hidden="true">
+            <defs>
+              <radialGradient id="tileA" cx="35%" cy="28%" r="95%">
+                <stop offset="0%" stop-color="#0E1A28"/><stop offset="60%" stop-color="#081120"/><stop offset="100%" stop-color="#050A13"/>
+              </radialGradient>
+              <linearGradient id="tealA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4FF2C0"/><stop offset="100%" stop-color="#1FCE96"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="112" fill="url(#tileA)"/>
+            <circle cx="228" cy="228" r="150" fill="#2EE6A8" opacity="0.08"/>
+            <line x1="316" y1="316" x2="408" y2="408" stroke="#E6F1F4" stroke-width="46" stroke-linecap="round"/>
+            <line x1="316" y1="316" x2="408" y2="408" stroke="url(#tealA)" stroke-width="18" stroke-linecap="round"/>
+            <circle cx="228" cy="228" r="124" fill="#07101C"/>
+            <circle cx="228" cy="228" r="124" fill="none" stroke="#E6F1F4" stroke-width="26"/>
+            <circle cx="228" cy="228" r="90" fill="none" stroke="#3A5A76" stroke-width="10" stroke-dasharray="6 16 22 16 10 16" stroke-linecap="round"/>
+            <path d="M172 234 L212 274 L288 182" fill="none" stroke="url(#tealA)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <h4>Cipherscope</h4>
           <p>The knowledge layer. A trusted index of CVEs, advisories, tools, and research that both humans and our AI systems search — the single source of verified truth for the whole stack.</p>
         </div>
         <div class="c-arrow" aria-hidden="true">&rarr;</div>
         <div class="c-node">
           <p class="c-step">02 &mdash; Detect</p>
+          <svg class="c-icon" viewBox="0 0 512 512" aria-hidden="true">
+            <defs>
+              <radialGradient id="tileB" cx="35%" cy="28%" r="95%">
+                <stop offset="0%" stop-color="#231708"/><stop offset="60%" stop-color="#170F06"/><stop offset="100%" stop-color="#0D0A07"/>
+              </radialGradient>
+              <linearGradient id="flameB" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F7C56B"/><stop offset="100%" stop-color="#E8842E"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="112" fill="url(#tileB)"/>
+            <circle cx="228" cy="228" r="150" fill="#E8842E" opacity="0.10"/>
+            <line x1="316" y1="316" x2="408" y2="408" stroke="#F3EADC" stroke-width="46" stroke-linecap="round"/>
+            <line x1="316" y1="316" x2="408" y2="408" stroke="url(#flameB)" stroke-width="18" stroke-linecap="round"/>
+            <circle cx="228" cy="228" r="124" fill="#130D06"/>
+            <circle cx="228" cy="228" r="124" fill="none" stroke="#F3EADC" stroke-width="26"/>
+            <g stroke="#4A3A25" stroke-width="9" stroke-linecap="round" opacity="0.7">
+              <line x1="150" y1="180" x2="240" y2="180"/><line x1="150" y1="204" x2="270" y2="204"/>
+              <line x1="150" y1="276" x2="230" y2="276"/><line x1="150" y1="300" x2="260" y2="300"/>
+            </g>
+            <path d="M136 228 H176 L196 188 L220 268 L242 228 L262 228 L278 200 L300 228 H320" fill="none" stroke="url(#flameB)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="url(#flameB)"><circle cx="196" cy="188" r="8"/><circle cx="220" cy="268" r="8"/></g>
+          </svg>
           <h4>Tracelight.ai</h4>
           <p>The detection layer. Tracelight's AI analyst hunts anomalies in your logs and queries Cipherscope's index in real time to match what it sees against known CVEs and threat actors — explaining every alert with cited, trusted context.</p>
         </div>
         <div class="c-arrow" aria-hidden="true">&rarr;</div>
         <div class="c-node">
           <p class="c-step">03 &mdash; Defend</p>
+          <svg class="c-icon" viewBox="0 0 512 512" aria-hidden="true">
+            <defs>
+              <radialGradient id="tileC" cx="35%" cy="28%" r="95%">
+                <stop offset="0%" stop-color="#161228"/><stop offset="60%" stop-color="#0F0C1E"/><stop offset="100%" stop-color="#0A0814"/>
+              </radialGradient>
+              <linearGradient id="violetC" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#A7B4FF"/><stop offset="100%" stop-color="#6C7CF0"/>
+              </linearGradient>
+            </defs>
+            <rect width="512" height="512" rx="112" fill="url(#tileC)"/>
+            <circle cx="256" cy="240" r="160" fill="#6C7CF0" opacity="0.12"/>
+            <g fill="url(#violetC)" opacity="0.85">
+              <circle cx="120" cy="150" r="9"/><circle cx="392" cy="168" r="7"/>
+              <circle cx="108" cy="360" r="7"/><circle cx="398" cy="340" r="9"/>
+            </g>
+            <path d="M256 96 L356 132 V244 C356 320 312 368 256 396 C200 368 156 320 156 244 V132 Z" fill="#120D24" stroke="#F3EADC" stroke-width="20" stroke-linejoin="round"/>
+            <path d="M256 96 L356 132 V244 C356 320 312 368 256 396 C200 368 156 320 156 244 V132 Z" fill="none" stroke="url(#violetC)" stroke-width="6" stroke-linejoin="round" opacity="0.9"/>
+            <rect x="216" y="228" width="80" height="64" rx="10" fill="none" stroke="url(#violetC)" stroke-width="16"/>
+            <path d="M230 228 V204 a26 26 0 0 1 52 0 v24" fill="none" stroke="url(#violetC)" stroke-width="16" stroke-linecap="round"/>
+          </svg>
           <h4>Prompt Immune System</h4>
           <p>The protection layer. It shields the AI agents themselves — including Tracelight — from injected instructions, and every attack it quarantines is fed back into Cipherscope's index as fresh, searchable threat intelligence.</p>
         </div>
       </div>
       <p class="c-loop">Cipherscope informs Tracelight &middot; Tracelight is guarded by Immune &middot; Immune's catches enrich Cipherscope — a closed loop that gets smarter with every threat.</p>
+
+      <div class="loop-wrap">
+        <div class="loop-copy">
+          <p class="eyebrow">In plain terms</p>
+          <h3>It's not a line. It's a wheel.</h3>
+          <p>Picture it less like a factory line with a start and an end, and more like a <strong>wheel that never stops turning</strong>. There's no final step where the process shuts off.</p>
+          <p><strong>Cipherscope</strong> hands Tracelight trusted facts to check against. <strong>Tracelight</strong> uses those facts to catch trouble and hands anything suspicious to the Immune System. The <strong>Immune System</strong> neutralizes it — and instead of throwing that knowledge away, feeds it straight back into Cipherscope.</p>
+          <p>Which means the wheel arrives back where it started, except a little wiser than the last time around. Round and round, every threat it catches makes the next lap smarter.</p>
+        </div>
+
+        <div class="loop-diagram" aria-hidden="true">
+          <svg viewBox="0 0 420 420">
+            <defs>
+              <marker id="loopArrowTeal" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#1FCE96"/>
+              </marker>
+              <marker id="loopArrowAmber" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#E8842E"/>
+              </marker>
+              <marker id="loopArrowViolet" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 Z" fill="#8C9BF5"/>
+              </marker>
+            </defs>
+
+            <!-- track -->
+            <circle cx="210" cy="210" r="150" fill="none" stroke="#2B2318" stroke-dasharray="2 7"/>
+
+            <!-- traveling dots, animated to show the loop never stops -->
+            <g class="loop-ring">
+              <circle cx="210" cy="60" r="4" fill="#F0B45C"/>
+            </g>
+            <g class="loop-ring2">
+              <circle cx="210" cy="60" r="4" fill="#F0B45C" opacity="0.55"/>
+            </g>
+
+            <!-- arc 1: Cipherscope -> Tracelight -->
+            <path d="M256.4,67.4 A150,150 0 0,1 356.7,241.2" fill="none" stroke="#E8842E" stroke-width="3" marker-end="url(#loopArrowAmber)"/>
+            <!-- arc 2: Tracelight -> Immune -->
+            <path d="M310.4,321.5 A150,150 0 0,1 109.7,321.5" fill="none" stroke="#8C9BF5" stroke-width="3" marker-end="url(#loopArrowViolet)"/>
+            <!-- arc 3: Immune -> Cipherscope -->
+            <path d="M63.3,241.2 A150,150 0 0,1 163.7,67.4" fill="none" stroke="#1FCE96" stroke-width="3" marker-end="url(#loopArrowTeal)"/>
+
+            <!-- center -->
+            <text x="210" y="204" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="26" fill="#9A8D7B" font-style="italic">&#8734;</text>
+            <text x="210" y="228" text-anchor="middle" class="loop-center-label">never stops</text>
+
+            <!-- node: Cipherscope -->
+            <circle cx="210" cy="60" r="34" fill="#07101C" stroke="#1FCE96" stroke-width="2.5"/>
+            <g transform="translate(210,60)" stroke="#4FF2C0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M-9,0 L-2,8 L11,-10"/>
+            </g>
+            <text x="210" y="112" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600" fill="#F3EADC">Cipherscope</text>
+
+            <!-- node: Tracelight -->
+            <circle cx="339.9" cy="285" r="34" fill="#130D06" stroke="#E8842E" stroke-width="2.5"/>
+            <g transform="translate(339.9,285)" stroke="#F7C56B" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M-14,2 H-6 L-2,-9 L4,10 L8,2 H14"/>
+            </g>
+            <text x="339.9" y="337" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600" fill="#F3EADC">Tracelight.ai</text>
+
+            <!-- node: Immune -->
+            <circle cx="80.1" cy="285" r="34" fill="#120D24" stroke="#8C9BF5" stroke-width="2.5"/>
+            <g transform="translate(80.1,285)" stroke="#A7B4FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <rect x="-12" y="-2" width="24" height="18" rx="3"/>
+              <path d="M-7,-2 V-9 a7,7 0 0 1 14,0 v7"/>
+            </g>
+            <text x="80.1" y="337" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F3EADC">Prompt Immune</text>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
