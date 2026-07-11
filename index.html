@@ -381,6 +381,46 @@ nav{
 @media(max-width:760px){
   .future-card{grid-template-columns:1fr;padding:36px 26px}
 }
+.cipher-card::after{content:"⌕"}
+
+/* ---------- constellation (how the three connect) ---------- */
+.constellation{
+  margin-top:20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:44px;
+  background:
+    radial-gradient(ellipse 70% 90% at 90% 0%, rgba(232,132,46,.07), transparent 60%),
+    #100E0B;
+}
+.constellation-grid{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;
+  gap:22px;align-items:stretch;
+}
+.c-node{
+  border:1px solid rgba(240,180,92,.22);
+  border-radius:14px;padding:24px;
+  background:rgba(240,180,92,.03);
+}
+.c-step{
+  font-family:var(--mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:10px;
+}
+.c-node h4{font-family:var(--display);font-size:20px;margin-bottom:10px}
+.c-node p:last-child{color:var(--dust);font-size:14.5px;line-height:1.6}
+.c-arrow{
+  align-self:center;color:var(--gold);font-size:22px;opacity:.7;
+}
+.c-loop{
+  margin-top:26px;text-align:center;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  color:var(--gold);
+}
+@media(max-width:860px){
+  .constellation{padding:34px 24px}
+  .constellation-grid{grid-template-columns:1fr}
+  .c-arrow{transform:rotate(90deg);justify-self:center}
+}
 
 /* ---------- partner ---------- */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -754,6 +794,44 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
         <span style="display:flex;align-items:center;gap:10px"><span class="blink"></span>In incubation</span>
         <a class="btn btn-solar" href="https://ghokkul.github.io/immune.ai/" target="_blank" rel="noopener">See the demo &rarr;</a>
       </div>
+    </div>
+
+    <div class="future-card cipher-card reveal" style="margin-top:20px">
+      <div>
+        <h3>Project Cipherscope <span class="year-pill">2027</span></h3>
+        <p class="f-desc">A dedicated cybersecurity browser search engine. The open web is flooded with SEO spam, cloned advisories, and outright malicious lookalikes — Cipherscope indexes only vetted, trusted security sources. Type a CVE, a threat actor, an exploit name, or a technique, and get curated results across advisories, tools, write-ups, and courses. Search only what's trusted. Cipherscope becomes the discovery layer of the studio: the same trusted intelligence index that powers its search feeds Tracelight's AI analyst with verified threat context, so every alert it explains is grounded in vetted sources — not hallucinated from the open web.</p>
+        <div class="tags"><span class="tag">Security Search</span><span class="tag">Threat Intel</span><span class="tag">Trusted Index</span></div>
+      </div>
+      <div class="future-status" style="flex-direction:column;align-items:flex-end;gap:16px">
+        <span style="display:flex;align-items:center;gap:10px"><span class="blink"></span>In incubation</span>
+        <a class="btn btn-solar" href="https://ghokkul.github.io/cipherscope/" target="_blank" rel="noopener">See the demo &rarr;</a>
+      </div>
+    </div>
+
+    <div class="constellation reveal">
+      <p class="eyebrow" style="margin-bottom:14px">One constellation, three suns</p>
+      <h3 style="font-size:clamp(22px,2.8vw,30px);margin-bottom:14px">How the three connect</h3>
+      <p class="f-desc" style="margin-bottom:26px">Cipherscope, Tracelight, and the Prompt Immune System aren't three separate bets — they're one security loop. Each layer feeds the next.</p>
+      <div class="constellation-grid">
+        <div class="c-node">
+          <p class="c-step">01 &mdash; Know</p>
+          <h4>Cipherscope</h4>
+          <p>The knowledge layer. A trusted index of CVEs, advisories, tools, and research that both humans and our AI systems search — the single source of verified truth for the whole stack.</p>
+        </div>
+        <div class="c-arrow" aria-hidden="true">&rarr;</div>
+        <div class="c-node">
+          <p class="c-step">02 &mdash; Detect</p>
+          <h4>Tracelight.ai</h4>
+          <p>The detection layer. Tracelight's AI analyst hunts anomalies in your logs and queries Cipherscope's index in real time to match what it sees against known CVEs and threat actors — explaining every alert with cited, trusted context.</p>
+        </div>
+        <div class="c-arrow" aria-hidden="true">&rarr;</div>
+        <div class="c-node">
+          <p class="c-step">03 &mdash; Defend</p>
+          <h4>Prompt Immune System</h4>
+          <p>The protection layer. It shields the AI agents themselves — including Tracelight — from injected instructions, and every attack it quarantines is fed back into Cipherscope's index as fresh, searchable threat intelligence.</p>
+        </div>
+      </div>
+      <p class="c-loop">Cipherscope informs Tracelight &middot; Tracelight is guarded by Immune &middot; Immune's catches enrich Cipherscope — a closed loop that gets smarter with every threat.</p>
     </div>
   </div>
 </section>
