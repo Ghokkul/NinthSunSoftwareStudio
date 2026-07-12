@@ -443,6 +443,37 @@ nav{
 @media (prefers-reduced-motion: reduce){
   .loop-ring,.loop-ring2{animation:none}
 }
+
+/* ---------- cipherscope spotlight ---------- */
+.spotlight{
+  margin-top:20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:44px;
+  background:
+    radial-gradient(ellipse 70% 90% at 8% 0%, rgba(31,206,150,.07), transparent 60%),
+    #100E0B;
+}
+.spotlight-head{max-width:66ch;margin-bottom:36px}
+.spotlight-head .eyebrow{margin-bottom:14px}
+.spotlight-head h3{font-size:clamp(22px,2.8vw,30px);margin-bottom:14px}
+.spotlight-head p{color:var(--dust);font-size:15.5px;line-height:1.7}
+.spotlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.sp-card{
+  border:1px solid rgba(79,242,192,.2);
+  border-radius:14px;padding:26px;
+  background:rgba(79,242,192,.03);
+}
+.sp-card .sp-tag{
+  font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:#4FF2C0;margin-bottom:12px;display:block;
+}
+.sp-card h4{font-family:var(--display);font-size:19px;margin-bottom:10px}
+.sp-card p{color:var(--dust);font-size:14.5px;line-height:1.65}
+@media(max-width:860px){
+  .spotlight{padding:34px 24px}
+  .spotlight-grid{grid-template-columns:1fr}
+}
 @media(max-width:860px){
   .constellation{padding:34px 24px}
   .constellation-grid{grid-template-columns:1fr}
@@ -987,6 +1018,26 @@ footer{border-top:1px solid var(--line);padding:56px 0;background:var(--char)}
             </g>
             <text x="80.1" y="337" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F3EADC">Prompt Immune</text>
           </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="spotlight reveal">
+      <div class="spotlight-head">
+        <p class="eyebrow">The knowledge layer, up close</p>
+        <h3>Cipherscope is a search engine — built only for security</h3>
+        <p>General search wasn't built for this work. Look up a CVE or a threat actor on the open web and you're wading through SEO-farmed blogs, cloned advisories, and lookalike sites that are sometimes malicious themselves. Cipherscope is different by design: it indexes nothing but vetted, verified security sources — CVEs, vendor advisories, exploit databases, tools, and research — so a query returns the trusted answer, not the highest-ranked one. And because that index is structured and queryable, it's not just a tool for human analysts. It's infrastructure the rest of the studio's AI systems can search against in real time.</p>
+      </div>
+      <div class="spotlight-grid">
+        <div class="sp-card">
+          <span class="sp-tag">Powers &mdash; Tracelight.ai</span>
+          <h4>Grounded detections, not guesses</h4>
+          <p>An AI analyst that relies only on what it learned in training will eventually hallucinate a CVE or misjudge a threat actor's behavior. Tracelight avoids that by querying Cipherscope the moment it flags an anomaly, matching what it sees against current, verified threat data instead of a stale snapshot. The result: every alert comes with a citation back to a trusted source, so an analyst can check Tracelight's reasoning instead of taking it on faith — and detection stays current the instant Cipherscope indexes a new advisory, with no retraining required.</p>
+        </div>
+        <div class="sp-card">
+          <span class="sp-tag">Powers &mdash; Prompt Immune System</span>
+          <h4>A living reference for attack patterns</h4>
+          <p>Prompt-injection techniques and jailbreak patterns are research too, and Cipherscope indexes them alongside every other vetted threat write-up — giving the Immune System a current reference for what a malicious instruction looks like, rather than a fixed rule set that ages the day it ships. The loop closes here: every injected instruction the Immune System quarantines is fed back into Cipherscope as fresh intelligence, so the next attack of that shape is something the whole stack already recognizes.</p>
         </div>
       </div>
     </div>
